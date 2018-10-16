@@ -16,9 +16,13 @@ class ViewController: UIViewController {
     @IBAction func conversionSwitch(_ sender: UISwitch) {
         
         if sender.isOn {
-            standardToMetric()
+            let metricWidthAndHeight = standardToMetric()  //convert the values in the text fields to metric
+            let metricWidth = metricWidthAndHeight.0.value //extract the width value from the conversion
+            let metricHeight = metricWidthAndHeight.1.value //extract the height value from the conversion
+            canvasWidth.text = String(metricWidth) //convert the width to a string and update the width text field
+            canvasHeight.text = String(metricHeight) //convert the height to a string and update the height text field
         } else {
-            
+            //TODO: implement metricToStandard function, and update UI with returned values
         }
 
     }
