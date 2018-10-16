@@ -18,7 +18,8 @@ class ViewController: UIViewController {
         if sender.isOn {
             standardToMetric()
         } else {
-            
+            let canvasWidthMeasurement = Measurement(value: Double(canvasWidth.text!)!, unit: UnitLength.meters)
+            let canvasHeightMeasurement = Measurement(value: Double(canvasHeight.text!)!, unit: UnitLength.meters)
         }
 
     }
@@ -32,8 +33,6 @@ class ViewController: UIViewController {
         
         return (canvasWidthConverted, canvasHeightConverted)
     }
-    
-    
     
     
     @IBAction func Calculate(_ sender: UIButton) {
