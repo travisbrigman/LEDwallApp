@@ -19,28 +19,28 @@ func  wallDims(canvasHeightMeters: Double, canvasLengthMeters: Double) -> (wallH
     var wallWidthInTiles = Measurement(value: 0.0, unit: UnitLength.halfMeters)
     
     if canvasHeightMeters.truncatingRemainder(dividingBy: 1.0) >= 0.5 {
-        wallHeightInTiles.value = canvasHeightMeters.rounded(.towardZero) / (LEDpanel().panelHeight.value) + 1
+        wallHeightInTiles.value = canvasHeightMeters.rounded(.towardZero) / (LEDpanel().panelHeight.value) + 1.0
     } else {
         wallHeightInTiles.value = canvasHeightMeters.rounded(.towardZero) / (LEDpanel().panelHeight.value)
     }
     if canvasLengthMeters.truncatingRemainder(dividingBy: 1.0) >= 0.5 {
-        wallWidthInTiles.value = (canvasLengthMeters.rounded(.towardZero) / LEDpanel().panelWidth.value) + 1
+        wallWidthInTiles.value = (canvasLengthMeters.rounded(.towardZero) / LEDpanel().panelWidth.value) + 1.0
     } else {
         wallWidthInTiles.value = canvasLengthMeters.rounded(.towardZero) / LEDpanel().panelWidth.value
     }
     
     let wallHardwareWidth = Int(wallWidthInTiles.value)
     
-    if wallHardwareWidth / 2 % 2 == 0 {
-        doubleHardware = wallHardwareWidth / 2
-    } else {
-        doubleHardware = wallHardwareWidth - 1
+    if wallHardwareWidth % 2 == 0 {
+        doubleHardware = (wallHardwareWidth / 2)
+    } else if wallHardwareWidth % 2 != 0 {
+        doubleHardware = (wallHardwareWidth - 1) / 2
         singleHardware = 1
     }
     
     let wallHeightInFeet = wallHeightInTiles.converted(to: UnitLength.feet)
     let wallWidthInFeet = wallWidthInTiles.converted(to: UnitLength.feet)
-    let totalPanels = Int(wallWidthInTiles.value) * Int(wallWidthInTiles.value)
+    let totalPanels = Int(wallWidthInTiles.value) * Int(wallHeightInTiles.value)
     print("Total Number of Panels \(totalPanels)")
     
     let wallAspectRatio = Double(round(1000*((wallWidthInTiles.value / 2) / (wallHeightInTiles.value / 2)))/1000)

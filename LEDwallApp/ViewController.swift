@@ -14,37 +14,49 @@ class ViewController: UIViewController {
     @IBOutlet weak var canvasHeight: UITextField!
     
     @IBAction func conversionSwitch(_ sender: UISwitch) {
-        
-        if sender.isOn {
-            let metricWidthAndHeight = standardToMetric()  //convert the values in the text fields to metric
-            let metricWidth = metricWidthAndHeight.0.value //extract the width value from the conversion
-            let metricHeight = metricWidthAndHeight.1.value //extract the height value from the conversion
-            canvasWidth.text = String(metricWidth) //convert the width to a string and update the width text field
-            canvasHeight.text = String(metricHeight) //convert the height to a string and update the height text field
-        } else {
-            let canvasWidthMeasurement = Measurement(value: Double(canvasWidth.text!)!, unit: UnitLength.meters)
-            let canvasHeightMeasurement = Measurement(value: Double(canvasHeight.text!)!, unit: UnitLength.meters)
-            //TODO: implement metricToStandard function, and update UI with returned values
+        if !sender.isOn {
+            CanvasHeightUnitLabel.text = "Meters"
+            CanvasWidthUnitLabel.text = "Meters"
+        } else if sender.isOn {
+            CanvasHeightUnitLabel.text = "Feet"
+            CanvasWidthUnitLabel.text = "Feet"
         }
 
     }
+    @IBOutlet weak var isSwitchOn: UISwitch!
+    
+    
+    @IBOutlet weak var CanvasWidthUnitLabel: UILabel!
+    
+    @IBOutlet weak var CanvasHeightUnitLabel: UILabel!
     
     func standardToMetric() -> (Measurement<UnitLength>, Measurement<UnitLength>) {
-        let canvasWidthDouble = Measurement(value: Double(canvasWidth.text!)!, unit: UnitLength.feet)
         let canvasHeightDouble = Measurement(value: Double(canvasHeight.text!)!, unit: UnitLength.feet)
+        let canvasWidthDouble = Measurement(value: Double(canvasWidth.text!)!, unit: UnitLength.feet)
         
-        let canvasWidthConverted = canvasWidthDouble.converted(to: UnitLength.meters)
+        print("canvasHeight = \(canvasHeightDouble) canvasWidth = \(canvasWidthDouble)")
+        
         let canvasHeightConverted = canvasHeightDouble.converted(to: UnitLength.meters)
+        let canvasWidthConverted = canvasWidthDouble.converted(to: UnitLength.meters)
         
-        return (canvasWidthConverted, canvasHeightConverted)
+        print("Converted Height = \(canvasHeightConverted) Converted Width = \(canvasWidthConverted)")
+        
+        return (canvasHeightConverted, canvasWidthConverted)
     }
-    
-    
+
     @IBAction func Calculate(_ sender: UIButton) {
-        let width = Double(canvasWidth.text!)
-        let height = Double(canvasHeight.text!)
         
-        let result = wallDims(canvasHeightMeters: height!, canvasLengthMeters: width!)
+        let converted = standardToMetric()
+        
+        var height = Double(canvasWidth.text!)!
+        var width = Double(canvasWidth.text!)!
+        
+        if isSwitchOn.isOn {
+            height = converted.0.value
+            width = converted.1.value
+        }
+        
+        let result = wallDims(canvasHeightMeters: height, canvasLengthMeters: width)
             print(result)
         
         let resultsViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ResultsViewController") as! ResultsViewController
