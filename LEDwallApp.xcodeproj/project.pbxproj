@@ -15,6 +15,8 @@
 		0F5C9BF52105226D00D4FAD4 /* EverythingElse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C9BF42105226D00D4FAD4 /* EverythingElse.swift */; };
 		0F5C9BF72105266500D4FAD4 /* HalfMetersExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F5C9BF62105266500D4FAD4 /* HalfMetersExtension.swift */; };
 		0F61BF7C212C67F900C320A7 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F61BF7B212C67F900C320A7 /* ResultsViewController.swift */; };
+		0F6D565421B488A5002180B8 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6D565221B488A4002180B8 /* Scene.swift */; };
+		0F6D565521B488A5002180B8 /* ARViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F6D565321B488A4002180B8 /* ARViewController.swift */; };
 		0F8E34C921041ABE00380FD0 /* ProductClasses.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8E34C821041ABE00380FD0 /* ProductClasses.swift */; };
 		0F8E34CB21041B1D00380FD0 /* AspectRatioSwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F8E34CA21041B1D00380FD0 /* AspectRatioSwitch.swift */; };
 /* End PBXBuildFile section */
@@ -30,6 +32,8 @@
 		0F5C9BF42105226D00D4FAD4 /* EverythingElse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EverythingElse.swift; sourceTree = "<group>"; };
 		0F5C9BF62105266500D4FAD4 /* HalfMetersExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HalfMetersExtension.swift; sourceTree = "<group>"; };
 		0F61BF7B212C67F900C320A7 /* ResultsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		0F6D565221B488A4002180B8 /* Scene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		0F6D565321B488A4002180B8 /* ARViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ARViewController.swift; path = ../../ARTest/ARTest/ARViewController.swift; sourceTree = "<group>"; };
 		0F8E34C821041ABE00380FD0 /* ProductClasses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductClasses.swift; sourceTree = "<group>"; };
 		0F8E34CA21041B1D00380FD0 /* AspectRatioSwitch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AspectRatioSwitch.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -73,6 +77,8 @@
 				0F61BF7B212C67F900C320A7 /* ResultsViewController.swift */,
 				0F23C817210180DB009D3EA6 /* Assets.xcassets */,
 				0F23C819210180DB009D3EA6 /* LaunchScreen.storyboard */,
+				0F6D565221B488A4002180B8 /* Scene.swift */,
+				0F6D565321B488A4002180B8 /* ARViewController.swift */,
 				0F23C814210180DA009D3EA6 /* Main.storyboard */,
 				0F23C81C210180DB009D3EA6 /* Info.plist */,
 			);
@@ -154,7 +160,9 @@
 				0F23C813210180DA009D3EA6 /* ViewController.swift in Sources */,
 				0F23C811210180DA009D3EA6 /* AppDelegate.swift in Sources */,
 				0F5C9BF72105266500D4FAD4 /* HalfMetersExtension.swift in Sources */,
+				0F6D565521B488A5002180B8 /* ARViewController.swift in Sources */,
 				0F61BF7C212C67F900C320A7 /* ResultsViewController.swift in Sources */,
+				0F6D565421B488A5002180B8 /* Scene.swift in Sources */,
 				0F8E34C921041ABE00380FD0 /* ProductClasses.swift in Sources */,
 				0F8E34CB21041B1D00380FD0 /* AspectRatioSwitch.swift in Sources */,
 				0F5C9BF52105226D00D4FAD4 /* EverythingElse.swift in Sources */,
