@@ -27,6 +27,16 @@ class ResultsViewController: UIViewController {
     @IBOutlet weak var WallAspectRatioLabel: UILabel!
     @IBOutlet weak var totalPanelLabel: UILabel!
     
+    
+   
+    @IBAction func arViewButton(_ sender: Any) {
+        print("button mashed")
+        performSegue(withIdentifier: "arViewSegue", sender: self)
+    }
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

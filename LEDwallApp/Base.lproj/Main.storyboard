@@ -121,7 +121,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="e4V-5e-Vcv" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137" y="-481"/>
+            <point key="canvasLocation" x="20" y="-1067"/>
         </scene>
         <!--Results View Controller-->
         <scene sceneID="VUW-Zd-qbG">
@@ -242,23 +242,20 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Chb-1F-gTT">
-                                <rect key="frame" x="154" y="701" width="107" height="35"/>
-                                <color key="backgroundColor" red="0.57414853570000002" green="0.57416242360000003" blue="0.57415497299999996" alpha="0.6114886558" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <state key="normal" title="See it in A.R.">
-                                    <color key="titleColor" red="1" green="0.0187217119" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OYN-vs-AfK">
+                                <rect key="frame" x="184" y="699" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="arViewButton:" destination="xQe-XB-Z4h" eventType="touchUpInside" id="6tE-sc-y19"/>
+                                    <segue destination="s3e-7G-BKX" kind="show" identifier="arViewSegue" id="1DT-7i-db4"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.83741801979999997" green="0.83743780850000005" blue="0.83742713930000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Chb-1F-gTT" firstAttribute="top" secondItem="WdT-XM-BxS" secondAttribute="bottom" constant="138" id="3eL-MS-Rh5"/>
                             <constraint firstItem="WdT-XM-BxS" firstAttribute="centerX" secondItem="QBM-RS-eNT" secondAttribute="centerX" id="Bjm-62-yHT"/>
-                            <constraint firstItem="bnP-th-6TR" firstAttribute="trailing" secondItem="Chb-1F-gTT" secondAttribute="trailing" constant="153" id="S9e-nn-Frq"/>
                             <constraint firstItem="WdT-XM-BxS" firstAttribute="centerY" secondItem="QBM-RS-eNT" secondAttribute="centerY" id="wJQ-VA-YM7"/>
-                            <constraint firstItem="bnP-th-6TR" firstAttribute="bottom" secondItem="Chb-1F-gTT" secondAttribute="bottom" constant="126" id="ydJ-C2-KDe"/>
-                            <constraint firstItem="Chb-1F-gTT" firstAttribute="leading" secondItem="bnP-th-6TR" secondAttribute="leading" constant="154" id="zI7-UY-Q5X"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="bnP-th-6TR"/>
                     </view>
@@ -275,36 +272,31 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zre-x1-jGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="966" y="134"/>
+            <point key="canvasLocation" x="1324.6376811594205" y="-524.33035714285711"/>
         </scene>
-        <!--View Controller-->
+        <!--ARViewController-->
         <scene sceneID="z8n-E1-Wor">
             <objects>
-                <viewController id="s3e-7G-BKX" customClass="ViewController" customModule="ARTest" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="ARViewController" id="s3e-7G-BKX" customClass="ARViewController" customModule="LEDwallApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ggz-X3-gSH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ngK-xD-SyL">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
+                            <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="o7x-vI-WV3">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </arscnView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="ngK-xD-SyL" firstAttribute="top" secondItem="Ggz-X3-gSH" secondAttribute="top" id="3rm-uu-3df"/>
-                            <constraint firstItem="ngK-xD-SyL" firstAttribute="leading" secondItem="yT4-Vf-3DR" secondAttribute="leading" id="8Qn-Ev-8EQ"/>
-                            <constraint firstItem="ngK-xD-SyL" firstAttribute="trailing" secondItem="yT4-Vf-3DR" secondAttribute="trailing" id="d7s-Pc-S5G"/>
-                            <constraint firstItem="ngK-xD-SyL" firstAttribute="bottom" secondItem="yT4-Vf-3DR" secondAttribute="bottom" id="rDQ-Kx-1Pe"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="yT4-Vf-3DR"/>
                     </view>
                     <connections>
-                        <outlet property="sceneView" destination="ngK-xD-SyL" id="rgo-DI-JVv"/>
+                        <outlet property="sceneView" destination="o7x-vI-WV3" id="GlD-nD-MRL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xQ5-e5-V9p" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1828" y="132"/>
+            <point key="canvasLocation" x="2552.1739130434785" y="-524.33035714285711"/>
         </scene>
     </scenes>
 </document>

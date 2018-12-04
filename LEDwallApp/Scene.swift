@@ -41,8 +41,10 @@ struct WallScene {
         cubeNode.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
         //cubeNode.position = SCNVector3(0, 0, -1) // SceneKit/AR coordinates are in meters
         
-        let columns = resultView.resultWallHeight!
-        let rows = resultView.resultWallWidth!
+        guard let columns = resultView.resultWallHeight,
+            let rows = resultView.resultWallWidth else { return }
+        
+        print(columns,rows)
         
         var yPosition = 0.0
         var xPosition = 0.0
